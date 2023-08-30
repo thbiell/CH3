@@ -1,0 +1,23 @@
+<html>
+	<head th:replace="~{base :: head}"></head>
+	<body>
+		<div th:replace="~{base :: logo}"></div>	
+
+		<div class="container">
+			<div th:replace="~{base :: titulo('Gerenciar frases')}"></div>
+	
+			<div class="card mt-3">
+				<form th:object="${requisicaoNovaFrase}" class="card-body" action="/frases/novo" method="POST">
+					<div class="form-group">
+						<label for="txt">Frase</label>
+						<input th:field="*{txt}" th:errorClass="is-invalid" class="form-control" placeholder="insira sua frase"/>
+						<small>Digite sua frase:</small>
+						<div class="invalid-feedback" th:errors="*{txt}">
+							Erros ao inserir a frase
+						</div>
+					<button class="btn btn-primary" type="submit">Cadastrar</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

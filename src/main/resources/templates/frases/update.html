@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{base :: head}"></head>
+
+<body>
+    <div th:replace="~{base :: logo}"></div>
+
+    <div class="container">
+        <div th:replace="~{base :: titulo('Alterar Frase')}"></div>
+
+        <div class="card mt-3">
+            <form th:object="${requisicaoAlterarFrase}" th:action="@{/frases/alterar}" method="POST"
+                class="card-body">
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input type="text" th:name="id" th:value="${id}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="txt">Frase</label>
+                    <input th:field="*{txt}" th:errorClass="is-invalid" class="form-control"
+                        placeholder="Insira sua frase" />
+                    <small>Digite sua frase:</small>
+                    <div class="invalid-feedback" th:errors="*{txt}">
+                        Erros ao inserir a frase
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Alterar</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
