@@ -35,6 +35,10 @@ Este é um projeto Spring MVC que permite gerenciar frases, cadastrando, ativand
 - Sinta-se à vontade para contribuir com este projeto através de pull requests.
 - Siga as diretrizes de contribuição presentes neste repositório.
 
+## Vídeo
+
+- https://drive.google.com/file/d/1mTo0L2f7cKlaYLAaL4tNslBQosCsTs8s/view?usp=sharing
+
 ## Licença
 
 Pode usar 👍
