@@ -14,7 +14,7 @@ public class Frase {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(length = 20000)
+	@Column(length = 8000)
 	private String txt;
 	
 	@Enumerated(EnumType.STRING)
