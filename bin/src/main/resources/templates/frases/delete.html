@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{base :: head}"></head>
+
+<body>
+    <div th:replace="~{base :: logo}"></div>
+
+    <div class="container">
+        <div th:replace="~{base :: titulo('Desativar Frase')}"></div>
+
+        <div class="card mt-3">
+            <form th:object="${requisicaoStatusFrase}" th:action="@{/frases/desativar}" method="POST"
+                class="card-body">
+                <div class="form-group">
+                    <label for="id">ID da Frase:</label>
+                    <input type="text" th:name="id" th:value="${id}" class="form-control" />
+                    <div class="invalid-feedback" th:if="${error}">
+                        Erro: ID inválido. Insira um ID válido.
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Alterar</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
